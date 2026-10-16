@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f4f0">
+  <title>Бронирование — Zombi3 Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css"><script src="js/app.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body data-page="booking">
+  <header class="site-header"><a class="brand" href="index.html">Zombi3 <span>Trip</span><i></i></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="rooms.html">Номера</a><a href="index.html#amenities">Удобства</a><a href="about.html">О нас</a><a href="index.html#contacts">Контакты</a></nav><a class="button button-dark header-cta" href="booking.html">Забронировать номер <span>↗</span></a></header>
+  <main class="inner-page booking-page">
+    <section class="page-heading page-heading-compact"><p class="eyebrow"><span class="eyebrow-dot"></span> ДАВАЙТЕ СПЛАНИРУЕМ</p><h1>Забронируйте <em>проживание.</em></h1><p>Выберите даты и подходящий номер. До вашего следующего отдыха в городе осталось всего несколько шагов.</p></section>
+    <div class="booking-layout">
+      <form class="booking-form" id="booking-form">
+        <div class="form-heading"><span class="form-step">01</span><div><h2>Ваши данные</h2><p>Расскажите немного о вашей поездке.</p></div></div>
+        <div class="form-grid">
+          <label class="field"><span>ЗАЕЗД</span><input type="date" id="checkin" name="checkin" required></label>
+          <label class="field"><span>ВЫЕЗД</span><input type="date" id="checkout" name="checkout" required></label>
+          <label class="field field-wide"><span>ТИП НОМЕРА</span><select id="room" name="room"><option value="Classic Double">Классический двухместный — €120 / ночь</option><option value="Deluxe King">Делюкс с кроватью King — €165 / ночь</option><option value="City Suite">Городской люкс — €220 / ночь</option></select></label>
+          <label class="field"><span>ГОСТИ</span><select id="guests" name="guests"><option value="1">1 гость</option><option value="2" selected>2 гостя</option><option value="3">3 гостя</option><option value="4">4 гостя</option></select></label>
+          <div class="field"><span>НОЧЕЙ</span><div class="field-static" id="nights-field">2 ночи</div></div>
+          <label class="field field-wide"><span>ИМЯ И ФАМИЛИЯ</span><input type="text" name="name" placeholder="Ваше имя и фамилия" autocomplete="name" required minlength="2"></label>
+          <label class="field field-wide"><span>ЭЛЕКТРОННАЯ ПОЧТА</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
+        </div>
+        <label class="checkbox-field"><input type="checkbox" name="updates"><span>Присылайте мне новости об акциях и событиях Zombi3 Trip.</span></label>
+        <button class="button button-dark submit-booking" type="submit">Отправить заявку <span>↗</span></button>
+        <p class="form-disclaimer">Заявка сохраняется в базе данных. Это не подтверждённое бронирование; оплата не подключена.</p>
+      </form>
+      <aside class="booking-summary">
+        <div class="summary-image"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" alt="Фото выбранного номера"><span>ВАШ ДОМ НА ВРЕМЯ ОТДЫХА</span></div>
+        <div class="summary-content"><p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> ВАШЕ ПРОЖИВАНИЕ</p><h2 id="summary-room">Классический двухместный</h2><p class="summary-meta"><span id="summary-nights">2 ночи</span><span>·</span><span id="summary-guests">2 гостя</span></p><div class="summary-line"><span>Цена за ночь</span><strong id="summary-rate">€120 <small>/ ночь</small></strong></div><div class="summary-line"><span>Продолжительность</span><strong id="summary-length">2 ночи</strong></div><div class="summary-total"><span>ИТОГО </span><strong id="summary-total">€240</strong></div><p class="summary-note"><span>✳</span> Планы изменились? Бесплатная отмена за 48 часов до заезда.</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer" id="contacts"><a class="brand brand-footer" href="index.html">Zombi3 <span>Trip</span><i></i></a><p class="footer-tagline">Больше пространства<br>для жизни.</p><div class="footer-contact"><span>БУДЕМ НА СВЯЗИ</span><a href="mailto:hello@zombi3trip.example">hello@zombi3trip.example</a><p>Г. Новосибирск, ул. Курчатова 1 · Работаем круглосуточно</p></div><div class="footer-bottom"><span>© 2026 Zombi3 Trip</span><span>Для важных моментов между делами.</span><div><a href="about.html">О нас</a><a href="rooms.html">Наши номера</a></div></div></footer>
+  <div class="toast" id="booking-toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><div><strong>Заявка подготовлена!</strong><p id="toast-message">Ваша демонстрационная заявка подготовлена.</p></div><button type="button" aria-label="Dismiss message" id="toast-close">×</button></div>
+</body>
+</html>
